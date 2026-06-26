@@ -7,8 +7,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Mansalva&display=swap');
 
 :root {
-  --primary: #10b981; /* Xanh ngọc tươi mát, dễ nhìn */
-  --primary-hover: #059669;
+  --primary: #059669; /* Xanh ngọc đậm hơn để chữ trắng dễ đọc tuyệt đối */
+  --primary-hover: #047857;
+  --accent: #10b981; /* Xanh tươi cho các chi tiết phụ */
   --secondary: #0f766e; /* Xanh cổ vịt đậm làm điểm nhấn */
   --secondary-dark: #042f2e;
   --bg: #ffffff;
