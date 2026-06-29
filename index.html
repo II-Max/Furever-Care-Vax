@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=960,user-scalable=no,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Furever Care Vax 🐾 — Furever Friends Project</title>
   <meta name="description"
     content="Furever Care Vax — Sự kiện tiêm phòng, triệt sản miễn phí cho chó mèo, do Furever Friends Project tổ chức.">
@@ -56,43 +56,49 @@
       <div class="ladi-section-background"></div>
       <div class="ladi-container">
 
-        <!-- Background decoration giống Form.html -->
-        <div class="hero-bg-circle"></div>
-
-        <!-- Tiêu đề chính: Furever Care Vax (chữ to Mansalva) -->
-        <div class="hero-title-box">
-          <h1 class="hero-title-main">Furever Care Vax</h1>
-          <p class="hero-subtitle">Furever Friends Project</p>
-        </div>
-
-
-        <!-- COUNTDOWN - giống Form.html -->
-        <div class="countdown-group">
-          <div class="countdown-box" id="countdown">
-            <div class="cd-item"><span class="cd-num" id="cd-days">00</span></div>
-            <div class="cd-item"><span class="cd-num" id="cd-hours">00</span></div>
-            <div class="cd-item"><span class="cd-num" id="cd-mins">00</span></div>
-            <div class="cd-item"><span class="cd-num" id="cd-secs">00</span></div>
-          </div>
-          <div class="cd-labels">
-            <span>NGÀY</span><span>GIỜ</span><span>PHÚT</span><span>GIÂY</span>
-          </div>
-        </div>
-
-        <!-- Thông tin thời gian - địa điểm -->
-        <div class="hero-info">
-          <p><strong>Thời gian:</strong> Chủ nhật, ngày 16/08/2026 · 9:00 — 13:00</p>
-          <p><strong>Địa điểm:</strong> Nhà hàng Vị, CLB Westbay, phân khu Aquabay, KĐT Ecopark, Văn Giang, Hưng Yên</p>
-        </div>
-
-        <!-- Ảnh nền Bgr.png phía sau 2 nút (giống Form.html có ảnh nền sau nút) -->
+        <!-- Ảnh nền Bgr.png -->
         <div class="btn-bgr-bg"></div>
 
-        <!-- 2 nút Mua Hàng Ngay + Đặt Hàng (giống Layout Form.html) -->
-        <a href="https://forms.gle/2smcLdeye2Zicr8T9" target="_blank" class="btn-datve-chinh">ĐĂNG KÝ TIÊM CHỦNG</a>
-        <a href="https://forms.gle/2smcLdeye2Zicr8T9" target="_blank" class="btn-datve-chinh btn-order-hang">ĐẶT
-          HÀNG</a>
+        <!-- Hero layout: 2 cột desktop, 1 cột mobile -->
+        <div class="hero-layout">
 
+          <!-- Cột trái: Tiêu đề -->
+          <div class="hero-left">
+            <div class="hero-title-box">
+              <h1 class="hero-title-main">Furever Care Vax</h1>
+              <p class="hero-subtitle">Furever Friends Project</p>
+            </div>
+          </div>
+
+          <!-- Cột phải: Countdown + Info + Nút -->
+          <div class="hero-right">
+            <!-- COUNTDOWN -->
+            <div class="countdown-group">
+              <div class="countdown-box" id="countdown">
+                <div class="cd-item"><span class="cd-num" id="cd-days">00</span></div>
+                <div class="cd-item"><span class="cd-num" id="cd-hours">00</span></div>
+                <div class="cd-item"><span class="cd-num" id="cd-mins">00</span></div>
+                <div class="cd-item"><span class="cd-num" id="cd-secs">00</span></div>
+              </div>
+              <div class="cd-labels">
+                <span>NGÀY</span><span>GIỜ</span><span>PHÚT</span><span>GIÂY</span>
+              </div>
+            </div>
+
+            <!-- Thông tin thời gian - địa điểm -->
+            <div class="hero-info">
+              <p><strong>Thời gian:</strong> Chủ nhật, ngày 16/08/2026 · 9:00 — 13:00</p>
+              <p><strong>Địa điểm:</strong> Nhà hàng Vị, CLB Westbay, phân khu Aquabay, KĐT Ecopark, Văn Giang, Hưng Yên</p>
+            </div>
+
+            <!-- 2 nút -->
+            <div class="hero-btns">
+              <a href="https://forms.gle/2smcLdeye2Zicr8T9" target="_blank" class="btn-datve-chinh">ĐĂNG KÝ TIÊM CHỦNG</a>
+              <a href="https://forms.gle/2smcLdeye2Zicr8T9" target="_blank" class="btn-datve-chinh">ĐẶT HÀNG</a>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
 
