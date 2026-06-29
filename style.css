@@ -41,28 +41,34 @@ ol,ul{list-style:none}
 .mob-link.cta{background:rgba(255,255,255,0.15);color:#fff;font-weight:700;border-color:rgb(244,64,37)}
 
 /* ===================================================================
-   HOME — HERO SECTION (fluid, không dùng absolute tọa độ cứng trên mobile)
+   HOME — HERO SECTION
    =================================================================== */
 #HOME{
   background-image:linear-gradient(135deg,#fffcf9,#ffe4e1,#fff5f0);
   background-size:200% 200%;
   animation:dreamyBg 10s ease infinite;
-  padding: 40px 0 60px;
+  padding: 40px 0 0;
+  position: relative;
+  min-height: 650px; /* Đảm bảo đủ chiều cao để không cắt phần dưới của ảnh */
+  overflow: hidden;
 }
 #HOME>.ladi-section-background{background:none}
 
-/* Hero background decoration */
+/* Căn giữa ảnh nền bằng left: 50% và transform, và đặt sát đáy */
 .btn-bgr-bg{
   position:absolute;
-  bottom:0;left:-40px;right:-40px;
-  height:260px;
-  background:url("images/Bgr.png") no-repeat center bottom / cover;
+  width:1011px;
+  height:282px;
+  bottom: 0;        /* Cố định sát đáy section, không còn lơ lửng */
+  left: 50%;        /* Đưa ra giữa */
+  transform: translateX(-50%); /* Căn giữa chính xác */
+  background:url("images/Bgr.png") no-repeat center bottom / cover; /* focus vào phần dưới ảnh */
   pointer-events:none;
   z-index:0;
   opacity:0.75;
 }
 
-/* Hero inner layout — 2 cột trên desktop */
+/* Hero inner layout — 2 cột desktop / 1 cột mobile */
 .hero-layout{
   display:flex;
   flex-wrap:wrap;
@@ -70,6 +76,7 @@ ol,ul{list-style:none}
   align-items:flex-start;
   position:relative;
   z-index:1;
+  padding-bottom: 240px; /* đủ chỗ để ảnh nền hiện bên dưới */
 }
 
 .hero-left{
@@ -92,7 +99,7 @@ ol,ul{list-style:none}
 .hero-subtitle{font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;color:#ff7f50;margin-top:8px;letter-spacing:2px;text-transform:uppercase}
 
 /* Countdown */
-.countdown-group{display:flex;flex-direction:column;align-items:center;width:100%;margin-top:16px}
+.countdown-group{display:flex;flex-direction:column;align-items:center;width:100%;margin-top:0}
 .countdown-box{display:flex;gap:8px;width:100%;max-width:320px}
 .cd-item{flex:1;height:64px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.6);border-radius:12px;border:1px solid rgba(29,117,205,0.15)}
 .cd-num{font-family:'Mansalva',cursive;font-weight:bold;font-size:40px;color:#ff7f50;line-height:1}
@@ -100,28 +107,43 @@ ol,ul{list-style:none}
 .cd-labels span{flex:1;text-align:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;color:#ff7f50;letter-spacing:1px}
 
 /* Hero info */
-.hero-info{width:100%;margin-top:12px}
-.hero-info p{font-family:'Montserrat',sans-serif;font-size:14px;line-height:1.7;color:#ff7f50;text-align:center;margin-bottom:6px}
-.hero-info p strong{font-weight:700}
+.hero-info{
+  width:100%;
+  margin-top:12px;
+  /* đảm bảo luôn hiển thị nền trắng bán trong suốt để đọc được dù có bg image */
+  background:rgba(255,255,255,0.55);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  border-radius:14px;
+  padding:14px 16px;
+  border:1px solid rgba(255,255,255,0.8);
+}
+.hero-info p{font-family:'Montserrat',sans-serif;font-size:14px;line-height:1.7;color:#d45500;text-align:center;margin-bottom:6px}
+.hero-info p:last-child{margin-bottom:0}
+.hero-info p strong{font-weight:700;color:#c24000}
 
 /* Nút hero */
-.hero-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:20px;position:relative;z-index:1}
+.hero-btns{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  justify-content:center;
+  margin-top:16px;
+  width:100%;
+}
 .btn-datve-chinh{
   display:inline-flex;align-items:center;justify-content:center;
-  padding:14px 28px;
+  padding:14px 24px;
   font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;line-height:1.4;
   color:#ff7f50;text-align:center;
-  background:rgba(255,255,255,0.55);
+  background:rgba(255,255,255,0.75);
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  border-radius:200px;border:1px solid rgba(255,255,255,0.8);
+  border-radius:200px;border:2px solid rgba(255,127,80,0.4);
   box-shadow:0 8px 32px 0 rgba(255,127,80,0.15);
   cursor:pointer;transition:all 0.3s;
   white-space:nowrap;
 }
-.btn-datve-chinh:hover{background:rgba(255,255,255,0.75);transform:translateY(-3px);box-shadow:0 12px 36px 0 rgba(255,127,80,0.25)}
-
-/* Legacy absolute buttons (hidden on mobile, kept for desktop compat) */
-.btn-order-hang{}
+.btn-datve-chinh:hover{background:rgba(255,255,255,0.95);transform:translateY(-3px);box-shadow:0 12px 36px 0 rgba(255,127,80,0.25)}
 
 /* ===== VIDEO Section ===== */
 #VIDEO{min-height:auto;background:#fff;padding:60px 0}
@@ -237,13 +259,19 @@ ol,ul{list-style:none}
   .hamburger{display:flex}
   .nav-btn.btn-datve{font-size:12px;padding:6px 10px}
 
-  /* Hero */
-  #HOME{padding:32px 0 200px}
-  .hero-layout{flex-direction:column;gap:24px}
+  /* Hero — tablet: stack dọc, ảnh nền ở dưới */
+  #HOME{padding:28px 0 0; min-height:auto}
+  .hero-layout{
+    flex-direction:column;
+    gap:20px;
+    padding-bottom: 300px; /* chỗ cho ảnh nền phía dưới */
+  }
   .hero-left,.hero-right{flex:1 1 100%;width:100%}
   .hero-title-main{font-size:48px}
+  .hero-info{margin-top:8px}
   .hero-info p{font-size:13px}
-  .btn-bgr-bg{height:200px}
+  /* Trên tablet content cao hơn, dời ảnh nền xuống */
+  .btn-bgr-bg{top:auto; bottom:0; height:280px}
 
   /* Sections */
   .section-title-mansalva{font-size:30px}
@@ -277,16 +305,19 @@ ol,ul{list-style:none}
   .mobile-dropdown{top:56px}
   .nav-btn.btn-datve{display:none} /* hamburger sẽ thay thế */
 
-  /* Hero */
-  #HOME{padding:28px 0 180px}
+  /* Hero điện thoại nhỏ */
+  #HOME{padding:24px 0 0; min-height:auto}
+  .hero-layout{padding-bottom:220px;gap:16px}
+  .btn-bgr-bg{top:auto; bottom:0; height:220px}
   .hero-title-main{font-size:38px}
   .hero-subtitle{font-size:12px;letter-spacing:1px}
-  .cd-num{font-size:34px}
-  .cd-item{height:54px}
+  .cd-num{font-size:32px}
+  .cd-item{height:50px}
   .cd-labels span{font-size:11px}
+  .hero-info{padding:12px 14px}
   .hero-info p{font-size:12px}
-  .btn-datve-chinh{font-size:14px;padding:12px 20px}
-  .btn-bgr-bg{height:160px}
+  .btn-datve-chinh{font-size:13px;padding:11px 18px}
+  .btn-bgr-bg{height:130px}
 
   /* Sections */
   .section-title-mansalva{font-size:26px}
@@ -310,9 +341,12 @@ ol,ul{list-style:none}
    RESPONSIVE — SMALL MOBILE (≤ 380px)
    =================================================================== */
 @media (max-width:380px){
-  .hero-title-main{font-size:32px}
-  .cd-num{font-size:28px}
-  .cd-item{height:46px}
+  .hero-title-main{font-size:30px}
+  .hero-layout{padding-bottom:110px}
+  .cd-num{font-size:26px}
+  .cd-item{height:44px}
+  .hero-info p{font-size:11px}
+  .btn-datve-chinh{font-size:12px;padding:10px 14px}
   .sanpham-grid{grid-template-columns:1fr}
   .sp-img-box{height:200px}
   .about-stats{grid-template-columns:1fr}
